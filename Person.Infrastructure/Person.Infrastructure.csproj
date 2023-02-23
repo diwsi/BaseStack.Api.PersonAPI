@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Core\Data\Mapper\Mapper.csproj" />
+    <ProjectReference Include="C:\Users\Diwsi\source\repos\BaseStack\Core\Data\Mapper\Mapper.csproj" />
     <ProjectReference Include="E:\Funland\BaseStackPackages\BaseStack.Dispatcher.Mediatr\MediatRDispatcher.csproj" />
     <ProjectReference Include="E:\Funland\BaseStackPackages\BaseStack.MessageBusManager\MessageBusManager.csproj" />
     <ProjectReference Include="E:\Funland\BaseStackPackages\BaseStack.Repository.EFAdapter\EFAdapter.csproj" />
