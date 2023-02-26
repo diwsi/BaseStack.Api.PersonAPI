@@ -1,6 +1,5 @@
 ﻿
-
-using EFAdapter;
+ 
 using MassTransit;
 using MessageBusDomainEvents;
 using Microsoft.Extensions.DependencyInjection;

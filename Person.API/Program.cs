@@ -34,7 +34,7 @@ builder.Services.AddScoped<IUOW, EFUnitOfWork>(sp =>
     var context = new PersonAppContext(connString);
     return new EFUnitOfWork(context);
 });
-builder.Services.AddScoped(typeof(IRepository<>), typeof(EFRePository<>));
+builder.Services.AddScoped(typeof(IRepository<>), typeof(EFRepository<>));
 builder.Services.AddScoped(typeof(IOutBoxService), typeof(OutboxService));
 
 builder.Services.AddMassTransit(d =>
