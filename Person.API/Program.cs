@@ -4,6 +4,7 @@ using MassTransit;
 using MediatR;
 using MediatRDispatcher;
 using MessageBusDomainEvents;
+using Microsoft.EntityFrameworkCore;
 using Person.API.Mapper;
 using Person.Domain.Consumers;
 using Person.Domain.Entities; 
@@ -31,7 +32,8 @@ builder.Services.AddScoped<IUOW, EFUnitOfWork>(sp =>
     {
         throw new NullReferenceException("Connection string is null");
     }
-    var context = new PersonAppContext(connString);
+    var dbContextOptions = new DbContextOptionsBuilder<PersonAppContext>().UseSqlServer(connString).Options;
+    var context = new PersonAppContext(dbContextOptions);
     return new EFUnitOfWork(context);
 });
 builder.Services.AddScoped(typeof(IRepository<>), typeof(EFRepository<>));

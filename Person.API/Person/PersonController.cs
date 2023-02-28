@@ -19,21 +19,16 @@ namespace Person.API.Person
         {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
-
-        private readonly ILogger<WeatherForecastController> _logger;
+         
         private readonly IDispatcher dispatcher; 
 
-        public PersonController(ILogger<WeatherForecastController> logger,
-            IDispatcher dispatcher 
+        public PersonController(   IDispatcher dispatcher 
             )
-        {
-            _logger = logger;
+        { 
             this.dispatcher = dispatcher; 
         }
 
-
-
-        [HttpGet(Name = "xxa")]
+         
         public async Task<ListPeopleAPIResponse> Get()
         { 
             var response = new ListPeopleAPIResponse();

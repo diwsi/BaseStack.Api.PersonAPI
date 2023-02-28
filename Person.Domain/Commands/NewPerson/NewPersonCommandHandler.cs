@@ -6,7 +6,7 @@ using Repository;
 
 namespace Person.Domain.Commands.NewPerson
 {
-    internal class NewPersonCommandHandler : IRequestHandler<NewPersonCommand, NewPersonResponse>
+    public class NewPersonCommandHandler : IRequestHandler<NewPersonCommand, NewPersonResponse>
     {
         private readonly IMapper mapper;
         private readonly IRepository<Entities.Person> personRepository;
