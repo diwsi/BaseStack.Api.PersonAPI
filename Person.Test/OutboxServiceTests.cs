@@ -1,12 +1,7 @@
-﻿using MediatRDispatcher;
-using Person.API.Person;
-using AutoMapper;
-using Person.Domain.Maps;
-using Person.Domain.Commands.NewPerson;
-using EFAdapter;
-using Person.Domain.Services.Outbox;
-using Repository;
+﻿using EFAdapter;
 using Person.Domain.Entities;
+using Person.Application.Services.Outbox;
+using Person.Application.DTO;
 
 namespace Person.Test
 {
@@ -20,7 +15,7 @@ namespace Person.Test
             var uow =InitUOW();
             var repository = new EFRepository<Outbox>(uow);
             var service = new OutboxService(repository, uow);
-            var testData = new Domain.DTO.OutBoxDTO()
+            var testData = new  OutBoxDTO()
             {
                 Data = new
                 {

@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Person.API.Controllers;
 using Person.API.Person.ListPople;
 using Person.API.Person.NewPerson;
-using Person.Domain.Commands.NewPerson;
-using Person.Domain.Queries.ListPeople;
+using Person.Application.Commands.NewPerson;
+using Person.Application.Queries.ListPeople;
 
 namespace Person.API.Person
 {
@@ -28,7 +28,7 @@ namespace Person.API.Person
             this.dispatcher = dispatcher; 
         }
 
-         
+        [HttpGet]
         public async Task<ListPeopleAPIResponse> Get()
         { 
             var response = new ListPeopleAPIResponse();

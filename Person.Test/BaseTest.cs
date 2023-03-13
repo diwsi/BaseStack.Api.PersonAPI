@@ -1,7 +1,9 @@
-﻿using EFAdapter;
+﻿using AutoMapper;
+using EFAdapter;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Person.Domain.Entities;
+using Person.API.Mapper;
+using Person.Application.Maps;
+using Person.Persistence;
 using Repository;
 
 namespace Person.Test
@@ -30,6 +32,12 @@ namespace Person.Test
         {
 
             return new EFUnitOfWork(DB);
+        }
+
+        public IMapper InitPersonAPIMapper()
+        {
+            var config = new MapperConfiguration(cfg => cfg.AddProfile<PersonAppProfile>());
+            return config.CreateMapper();
         }
     }
 }

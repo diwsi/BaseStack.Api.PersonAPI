@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <Folder Include="EventBus\" />
-    <Folder Include="Migrations\" />
     <Folder Include="Seeder\" />
   </ItemGroup>
 

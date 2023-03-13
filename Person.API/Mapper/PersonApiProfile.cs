@@ -1,6 +1,4 @@
-﻿using AutoMapper;
-using Person.Domain.DTO;
-using Person.Domain.Queries.ListPeople;
+﻿using AutoMapper; 
 
 namespace Person.API.Mapper
 {

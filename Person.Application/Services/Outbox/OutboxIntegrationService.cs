@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Person.Infrastructure.BackgroundServices;
 using Repository;
 
-namespace Person.Domain.Services.Outbox
+namespace Person.Application.Services.Outbox
 {
     public class OutboxIntegrationService : BaseBackgroundService
     {
@@ -24,7 +24,7 @@ namespace Person.Domain.Services.Outbox
                 var uow = scope.ServiceProvider.GetRequiredService<IUOW>();
                var eventBus= scope.ServiceProvider.GetRequiredService<IPublishEndpoint>();
                 
-                var repository = scope.ServiceProvider.GetRequiredService<IRepository<Entities.Outbox>>();
+                var repository = scope.ServiceProvider.GetRequiredService<IRepository<DomainEntities.Outbox>>();
 
                 var awaitingJobs = repository.Get(d => !d.ProcessDate.HasValue).OrderBy(d=>d.CreationDate);
                 if (awaitingJobs.Any())

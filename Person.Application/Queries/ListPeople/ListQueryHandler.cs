@@ -1,17 +1,16 @@
 ﻿using AutoMapper;
-using MediatR;
-using Person.Domain.Entities;
+using MediatR; 
 using Repository;
 
-namespace Person.Domain.Queries.ListPeople
+namespace Person.Application.Queries.ListPeople
 {
     internal class ListQueryHandler : IRequestHandler<ListPeopleQuery, ListQueryResponse>
     {
         private readonly IMapper mapper;
-        private readonly IRepository<Entities.Person> personRepository;
+        private readonly IRepository<DomainEntities.Person> personRepository;
 
         public ListQueryHandler(IMapper mapper,
-            IRepository<Entities.Person> personRepository)
+            IRepository<DomainEntities.Person> personRepository)
         {
             this.mapper = mapper;
             this.personRepository = personRepository;

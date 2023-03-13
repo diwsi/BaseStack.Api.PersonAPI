@@ -6,10 +6,11 @@ using MediatRDispatcher;
 using MessageBusDomainEvents;
 using Microsoft.EntityFrameworkCore;
 using Person.API.Mapper;
-using Person.Domain.Consumers;
-using Person.Domain.Entities; 
-using Person.Domain.Maps;
-using Person.Domain.Services.Outbox; 
+using Person.Application.Consumers;
+using Person.Application.Maps;
+using Person.Application.Services.Outbox;
+using Person.Domain.Entities;
+using Person.Persistence;
 using Repository;
  
 var builder = WebApplication.CreateBuilder(args);
@@ -22,7 +23,7 @@ ConfigurationManager configuration = builder.Configuration;
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddTransient(typeof(IDispatcher), typeof(MediatrDispatcher));
-builder.Services.AddMediatR(AppDomain.CurrentDomain.Load("Person.Domain"));
+builder.Services.AddMediatR(AppDomain.CurrentDomain.Load("Person.Application"));
 builder.Services.AddAutoMapper(typeof(PersonAppProfile), typeof(PersonApiProfile));
 
 builder.Services.AddScoped<IUOW, EFUnitOfWork>(sp =>

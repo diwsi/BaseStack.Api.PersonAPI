@@ -1,17 +1,16 @@
 ﻿using MassTransit;
-using MessageBusDomainEvents;
-using Person.Domain.Entities;
-using Person.Domain.Services.Outbox;
+using MessageBusDomainEvents; 
+using Person.Application.Services.Outbox;
 using Repository;
 
-namespace Person.Domain.Consumers
+namespace Person.Application.Consumers
 {
     public class DataIndexedConsumer : IConsumer<DataIndexed>
     {
-        private readonly IRepository<Outbox> repository;
+        private readonly IRepository<DomainEntities.Outbox> repository;
         private readonly IUOW uow;
 
-        public DataIndexedConsumer(IRepository<Entities.Outbox> repository,
+        public DataIndexedConsumer(IRepository<DomainEntities.Outbox> repository,
             IUOW uow)
         {
             this.repository = repository;

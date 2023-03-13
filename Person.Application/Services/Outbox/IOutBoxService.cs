@@ -1,6 +1,6 @@
-﻿using Person.Domain.DTO;
+﻿using Person.Application.DTO;
 
-namespace Person.Domain.Services.Outbox
+namespace Person.Application.Services.Outbox
 {
     public interface IOutBoxService
     {

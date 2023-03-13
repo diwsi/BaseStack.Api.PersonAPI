@@ -1,7 +1,7 @@
 ﻿using MediatRDispatcher;
-using Person.Domain.DTO;
+using Person.Application.DTO;
 
-namespace Person.Domain.Commands.NewPerson
+namespace Person.Application.Commands.NewPerson
 {
     public class NewPersonCommand : BaseCommand<NewPersonResponse>
     {

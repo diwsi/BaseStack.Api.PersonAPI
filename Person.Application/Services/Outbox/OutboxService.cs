@@ -1,15 +1,15 @@
 ﻿using Newtonsoft.Json;
-using Person.Domain.DTO;
+using Person.Application.DTO;
 using Repository;
 
-namespace Person.Domain.Services.Outbox
+namespace Person.Application.Services.Outbox
 {
     public class OutboxService : IOutBoxService
     {
-        private readonly IRepository<Entities.Outbox> outboxRepository;
+        private readonly IRepository<DomainEntities.Outbox> outboxRepository;
         private readonly IUOW uow;
 
-        public OutboxService(IRepository<Entities.Outbox> outboxRepository,
+        public OutboxService(IRepository<DomainEntities.Outbox> outboxRepository,
             IUOW uow)
         {
             this.outboxRepository = outboxRepository;
@@ -17,7 +17,7 @@ namespace Person.Domain.Services.Outbox
         }
         public Guid SaveOutBox(OutBoxDTO outboxDTO)
         {
-            var outbox = new Entities.Outbox()
+            var outbox = new DomainEntities.Outbox()
             {
                 Data = JsonConvert.SerializeObject(outboxDTO.Data),
                 DataID= outboxDTO.ID,

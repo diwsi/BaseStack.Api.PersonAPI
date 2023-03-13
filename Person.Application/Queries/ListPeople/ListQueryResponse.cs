@@ -1,5 +1,5 @@
 ﻿
-namespace Person.Domain.Queries.ListPeople
+namespace Person.Application.Queries.ListPeople
 {
     public class ListQueryResponse
     {

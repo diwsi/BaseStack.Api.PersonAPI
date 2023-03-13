@@ -1,4 +1,5 @@
-﻿using Person.Domain.DTO;
+﻿
+using Person.Application.DTO;
 
 namespace Person.API.Person.NewPerson
 {

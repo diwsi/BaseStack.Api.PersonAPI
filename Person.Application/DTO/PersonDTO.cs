@@ -1,5 +1,5 @@
 ﻿
-namespace Person.Domain.DTO
+namespace Person.Application.DTO
 {
     public class PersonDTO
     {
