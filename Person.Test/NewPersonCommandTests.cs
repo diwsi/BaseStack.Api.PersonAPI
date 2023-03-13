@@ -12,7 +12,7 @@ namespace Person.Test
     public class NewPersonCommandTests : BaseTest
     {
         [TestMethod]
-        public async Task New_Person_Command_Test()
+        public async Task New_Person_Command()
         {
             // Arrange
             var uow = InitUOW();

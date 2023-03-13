@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Person.API\Person.API.csproj" />
+    <ProjectReference Include="..\Person.Persistence\Person.Persistence.csproj" />
   </ItemGroup>
 
 </Project>
